@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VagusPredict — Forecast Dashboard</title>
+  <meta name="description" content="Live forecast dashboard for VagusPredict.">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header class="wrap">
+    <div class="brand"><a href="/">VagusPredict</a></div>
+    <nav>
+      <a class="active" href="/dashboard/">Dashboard</a>
+      <a href="/about.html">Method</a>
+    </nav>
+  </header>
+
+  <main class="wrap page">
+    <h1>Forecast Dashboard</h1>
+    <div class="gauge-card">
+      <div class="gauge-head">
+        <div>
+          <div class="asof">As of <span id="asof">2025-10-28</span></div>
+          <div class="prob"><span id="prob">90%</span></div>
+        </div>
+      </div>
+      <div class="gauge"><div id="bar" class="bar" style="width:90%"></div></div>
+      <div class="metrics">
+        <div>Base rate: <span id="base">20%</span></div>
+        <div>Total BF: <span id="bf">4.5</span></div>
+        <div>Posterior odds: <span id="odds">6.08</span></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Bayesian Breakdown</h3>
+        <table class="tbl" id="buckets">
+          <thead><tr><th>Bucket</th><th>BF</th><th>Note</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Recent Triggers</h3>
+        <ul id="triggers" class="list"></ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="wrap foot">
+    <div>© 2025 VagusPredict</div>
+    <div><a href="/about.html">Method</a></div>
+  </footer>
+
+  <script>
+    fetch('/data/forecast.json')
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById('asof').textContent = d.as_of;
+        document.getElementById('prob').textContent = d.current_prob_pct + '%';
+        document.getElementById('bar').style.width = d.current_prob_pct + '%';
+        document.getElementById('base').textContent = d.base_rate_pct + '%';
+        document.getElementById('bf').textContent = d.total_bf_product;
+        document.getElementById('odds').textContent = d.posterior_odds;
+
+        const tb = document.querySelector('#buckets tbody');
+        d.buckets.forEach(b => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${b.name}</td><td>${b.bf}</td><td>${b.note}</td>`;
+          tb.appendChild(tr);
+        });
+
+        const ul = document.getElementById('triggers');
+        d.triggers.forEach(t => {
+          const li = document.createElement('li');
+          li.innerHTML = `<strong>${t.date}</strong> — ${t.text} <em>${t.bf_note or ''}</em>`;
+          ul.appendChild(li);
+        });
+      })
+      .catch(_ => {});
+  </script>
+</body>
+</html>

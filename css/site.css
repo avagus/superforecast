@@ -1,0 +1,31 @@
+:root{
+  --bg:#0f1012; --fg:#e9ecef; --muted:#a7b0ba; --accent:#7ff57f; --bar:#3bd13b; --card:#17191d; --line:#2a2e35;
+}
+*{box-sizing:border-box}
+body{margin:0; padding:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif; background:var(--bg); color:var(--fg)}
+.wrap{max-width:1100px; margin:0 auto; padding:0 1.25rem}
+header{display:flex; align-items:center; justify-content:space-between; padding:1rem 0; border-bottom:1px solid var(--line)}
+.brand a{color:var(--accent); text-decoration:none; font-weight:800; letter-spacing:.4px}
+nav a{color:var(--fg); margin-left:1rem; text-decoration:none}
+nav a.active{color:var(--accent)}
+.hero{padding:3.5rem 0 2rem}
+h1{margin:0 0 .5rem 0; font-size:2rem}
+.lede{color:var(--muted); margin:0 0 1.25rem 0}
+.cta .btn{display:inline-block; padding:.8rem 1rem; border-radius:10px; text-decoration:none; border:1px solid var(--line); margin-right:.75rem}
+.btn.primary{background:var(--accent); color:#0b0e0c; border-color:transparent; font-weight:700}
+.btn.ghost{color:var(--fg)}
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; padding:1.5rem 0}
+@media(max-width: 900px){ .grid{grid-template-columns:1fr} }
+.card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:1rem}
+.page{padding:1.5rem 0 2.5rem}
+.gauge-card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:1rem; margin:1rem 0}
+.gauge-head{display:flex; justify-content:space-between; align-items:baseline}
+.asof{color:var(--muted)}
+.prob{font-size:2rem; font-weight:800}
+.gauge{width:100%; height:20px; background:#1d2026; border:1px solid var(--line); border-radius:10px; overflow:hidden}
+.bar{height:100%; background:var(--bar)}
+.metrics{display:flex; gap:1rem; color:var(--muted); margin-top:.5rem}
+.tbl{width:100%; border-collapse:collapse}
+.tbl th,.tbl td{border-bottom:1px solid var(--line); padding:.6rem .4rem; text-align:left}
+.list{margin:.25rem 0 0 1rem}
+.foot{border-top:1px solid var(--line); padding:1rem 0; color:var(--muted)}

@@ -3,80 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About — Superforecast: Putin Exit by Dec 2026</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="Methodology for the Superforecast on whether Putin remains in power by Dec 31, 2026.">
+  <title>VagusPredict — Method</title>
+  <meta name="description" content="Methodology for VagusPredict superforecasting.">
+  <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-  <header>
-    <h1>Methodology & Assumptions</h1>
-    <p class="subtitle">How this forecast is built, updated, and constrained.</p>
+  <header class="wrap">
+    <div class="brand"><a href="/">VagusPredict</a></div>
+    <nav>
+      <a href="/dashboard/">Dashboard</a>
+      <a class="active" href="/about.html">Method</a>
+    </nav>
   </header>
 
-  <section class="col" style="max-width:900px">
-    <h2>Purpose & Scope</h2>
-    <p>This project estimates the probability that Vladimir Putin will <em>not</em> be in power by <strong>Dec 31, 2026</strong>. It is not a forecast of Russian state collapse. The model tracks leadership exit via health, coup/elite bargain, forced resignation, or other removal.</p>
-
-    <h2>Model Structure</h2>
-    <ol>
-      <li><strong>Base Rate (P₀):</strong> Historical chance of an autocrat exiting within a given horizon. Converted to odds O₀ = P₀/(1−P₀).</li>
-      <li><strong>Bayes Factors (BF):</strong> Multiplicative evidence from six buckets:
-        <ul>
-          <li><strong>Military</strong> (operational effectiveness, force generation, tech adaptation)</li>
-          <li><strong>Economy/Energy</strong> (production & exports, infrastructure integrity, sanctions/finance, domestic fuel prices, industrial/logistics, FX/reserves)</li>
-          <li><strong>Elite/Institutions</strong> (cohesion vs. fracture, purges, succession signals)</li>
-          <li><strong>Domestic/Public</strong> (morale, shortages, protests, repression backfire)</li>
-          <li><strong>External/Diplomatic</strong> (allied cohesion, sanctions enforcement, arms flows)</li>
-          <li><strong>Symbolic/Context</strong> (prestige shocks, narrative fractures)</li>
-        </ul>
-      </li>
+  <main class="wrap page">
+    <h1>Methodology</h1>
+    <p>We estimate the probability of specific geopolitical outcomes using a base rate and multiplicative Bayes Factors (BFs) across six buckets: Military, Economy/Energy, Elite/Institutions, Domestic/Public, External/Diplomatic, and Symbolic/Context.</p>
+    <ul>
+      <li><strong>Controls:</strong> correlation penalty (0.90–0.95), one-BF-per-bucket-per-cycle, and caps for Economy/Energy to prevent double-counting.</li>
+      <li><strong>Standards:</strong> BF &gt; 1.15 requires ≥2 independent reputable sources or hard data (imagery/filings).</li>
       <li><strong>Posterior:</strong> O = O₀ × Π(BFᵢ);  P = O/(1+O).</li>
-    </ol>
-
-    <h2>Evidence Standards</h2>
-    <ul>
-      <li>BF &gt; 1.15 requires ≥2 independent reputable sources or direct data (imagery, filings, official notices).</li>
-      <li>Single-source or provisional items enter with smaller BF (≈1.05–1.10) and are upgraded/downgraded on confirmation.</li>
-      <li>We distinguish <em>signals</em> (operational, economic) from <em>noise</em> (rhetoric without action).</li>
     </ul>
+    <p>Updates are weekly; inflection notes are posted ad hoc.</p>
+  </main>
 
-    <h2>Controls Against Double Counting</h2>
-    <ul>
-      <li><strong>One BF per bucket per update cycle</strong> (weekly cadence).</li>
-      <li><strong>Correlation penalty</strong> 0.90–0.95 when multiple items share a common cause (e.g., refinery damage & export loss).</li>
-      <li><strong>Caps</strong> on Economy/Energy BF (typically 2.0–2.5 per cycle) to prevent runaway compounding.</li>
-    </ul>
-
-    <h2>Update Cadence</h2>
-    <p>Manual weekly updates. Emergency updates occur for major inflections (e.g., elite defection, nationwide rationing, large territorial shifts, strategic weapons use).</p>
-
-    <h2>What Moves the Needle</h2>
-    <ul>
-      <li><strong>Up:</strong> sustained refinery/grid outages inside Russia; elite fracture/purge; long-range strikes reducing production capacity; Asian oil demand reductions; widespread domestic shortages.</li>
-      <li><strong>Down:</strong> Russian multi‑front gains &gt;30 days; effective export workarounds; easing domestic shortages; alliance fatigue.</li>
-    </ul>
-
-    <h2>Interpretation</h2>
-    <p>Numbers reflect <em>probabilities</em>, not certainties. A 70–90% probability allows for meaningful downside scenarios. The model is disciplined: transparent inputs, explicit penalties, and dated entries.</p>
-
-    <h2>Limitations</h2>
-    <ul>
-      <li>Open‑source bias and reporting lags.</li>
-      <li>Unobservable elite dynamics may move faster than public data.</li>
-      <li>Exogenous shocks (e.g., sudden health events) are modeled as residual risk, not forecastable specifics.</li>
-    </ul>
-
-    <h2>Change Log & Versioning</h2>
-    <p>Every weekly update appends a dated entry to the homepage “Recent Triggers.” Major methodology changes will be noted here and in the repo commit history.</p>
-
-    <h2>Contact</h2>
-    <p>Questions, corrections, or data contributions: add an issue in the site repository or email the maintainer.</p>
-  </section>
-
-  <footer>
-    <div class="footnote" style="margin-top:1rem; color:#a7b0ba">
-      © 2025 Alex — Honest, no‑spin superforecast.
-    </div>
+  <footer class="wrap foot">
+    <div>© 2025 VagusPredict</div>
+    <div><a href="/dashboard/">Dashboard</a></div>
   </footer>
 </body>
 </html>
