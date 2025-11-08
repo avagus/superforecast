@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Superforecast: Putin Exit by Dec 2026</title>
+  <meta name="description" content="Weekly, evidence-weighted superforecast on whether Putin remains in power by Dec 31, 2026.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Superforecast: Putin Exit Probability</h1>
+    <p class="subtitle">Evidence-weighted, Bayesian updates — manually refreshed weekly.</p>
+  </header>
+
+  <section class="gauge-card">
+    <div class="gauge-label">
+      <div>
+        <strong>Current Assessment</strong>
+        <span class="asof">as of <span id="asof-date">2025-10-28</span></span>
+      </div>
+      <div class="prob"><span id="current-prob">90%</span></div>
+    </div>
+    <div class="gauge">
+      <div class="bar" id="gauge-bar" style="width:90%"></div>
+    </div>
+    <div class="metrics">
+      <div>Base rate: <span id="base-rate">20%</span></div>
+      <div>Total BF product: <span id="bf-product">4.5</span></div>
+      <div>Posterior odds: <span id="posterior-odds">6.08</span></div>
+    </div>
+  </section>
+
+  <section class="columns">
+    <div class="col">
+      <h2>Bayesian Breakdown</h2>
+      <table class="bucket-table" id="bucket-table">
+        <thead>
+          <tr><th>Bucket</th><th>BF</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Military</td><td>2.5</td><td>Operational failures; air-defense attrition; deep-strike reach</td></tr>
+          <tr><td>Economy/Energy</td><td>2.2 (capped)</td><td>Refinery/grid stress; inflation>20%; industrial stall</td></tr>
+          <tr><td>Elite/Institutions</td><td>1.3</td><td>Friction without open split</td></tr>
+          <tr><td>Domestic/Public</td><td>1.3</td><td>Rationing/blackouts; anxiety</td></tr>
+          <tr><td>External/Diplomatic</td><td>1.4</td><td>Allied cohesion; sanctions; arms</td></tr>
+          <tr><td>Symbolic/Context</td><td>1.1</td><td>Prestige erosion; narrative shocks</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <h2>Recent Triggers</h2>
+      <ul class="triggers" id="recent-triggers">
+        <li><strong>Oct 28:</strong> Rolling reservist deployment law (infrastructure defense) — <em>BF Military 1.20; Domestic 1.15</em></li>
+        <li><strong>Oct 27:</strong> Storm Shadow deep strike destroys Bryansk Chemical Plant — <em>BF Military 1.35; Econ 1.25</em></li>
+        <li><strong>Oct 27:</strong> Ocheretyne: RU 29-vehicle assault repelled, 15 AFVs destroyed — <em>BF Military 1.25</em></li>
+        <li><strong>Oct 25:</strong> Naval denial in Black Sea validated; B.S. Fleet degraded — <em>BF Military 1.30</em></li>
+      </ul>
+
+      <h3>Method</h3>
+      <p class="method">
+        Base rate × product of Bayes Factors (one per bucket/cycle), with correlation penalties and caps to avoid double-counting.
+        All inputs are sourced; verification required for BF &gt; 1.15.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Changelog</h2>
+    <ol id="changelog">
+      <li><strong>v0.1</strong> — site launched; initial gauge and buckets; manual weekly updates.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <div>Next update: <span id="next-update">2025-11-04</span></div>
+    <div class="footnote">© 2025 Alex — Honest, no-spin superforecast. </div>
+  </footer>
+
+  <script>
+    // Optional: load values from data/forecast-summary.json if present
+    fetch('data/forecast-summary.json')
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById('asof-date').textContent = d.as_of || '2025-10-28';
+        document.getElementById('current-prob').textContent = (d.current_prob_pct || 90) + '%';
+        document.getElementById('gauge-bar').style.width = (d.current_prob_pct || 90) + '%';
+        document.getElementById('base-rate').textContent = (d.base_rate_pct || 20) + '%';
+        document.getElementById('bf-product').textContent = d.total_bf_product || '4.5';
+        document.getElementById('posterior-odds').textContent = d.posterior_odds || '6.08';
+        document.getElementById('next-update').textContent = d.next_update || '2025-11-04';
+
+        if (d.buckets) {
+          const tbody = document.querySelector('#bucket-table tbody');
+          tbody.innerHTML = '';
+          d.buckets.forEach(b => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${b.name}</td><td>${b.bf}</td><td>${b.note}</td>`;
+            tbody.appendChild(tr);
+          });
+        }
+        if (d.triggers) {
+          const ul = document.getElementById('recent-triggers');
+          ul.innerHTML = '';
+          d.triggers.forEach(t => {
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>${t.date}:</strong> ${t.text} — <em>${t.bf_note}</em>`;
+            ul.appendChild(li);
+          });
+        }
+      })
+      .catch(_ => {});
+  </script>
+</body>
+</html>

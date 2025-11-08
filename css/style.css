@@ -1,0 +1,25 @@
+:root{
+  --bg:#0f1012; --fg:#e9ecef; --muted:#a7b0ba; --accent:#7ff57f; --bar:#3bd13b; --card:#17191d; --line:#2a2e35;
+}
+*{box-sizing:border-box}
+body{margin:0; padding:2rem; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif; background:var(--bg); color:var(--fg);}
+header{margin-bottom:1rem}
+h1{margin:0 0 .25rem 0; color:var(--accent); font-weight:800; letter-spacing:.4px}
+.subtitle{color:var(--muted); margin:0 0 1rem 0}
+.gauge-card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:1rem 1rem 1.25rem; margin-bottom:1.5rem}
+.gauge-label{display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:.5rem}
+.gauge-label .asof{color:var(--muted); font-size:.95rem; margin-left:.5rem}
+.gauge-label .prob{font-size:2rem; font-weight:800}
+.gauge{width:100%; height:20px; background:#1d2026; border:1px solid var(--line); border-radius:10px; overflow:hidden}
+.bar{height:100%; background:var(--bar); box-shadow:inset 0 0 6px rgba(0,0,0,.2)}
+.metrics{display:flex; gap:1.25rem; color:var(--muted); margin-top:.5rem; font-size:.95rem}
+.columns{display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-bottom:1.5rem}
+@media (max-width: 900px){ .columns{ grid-template-columns:1fr } }
+.col{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:1rem}
+.bucket-table{width:100%; border-collapse:collapse; margin-top:.5rem}
+.bucket-table th, .bucket-table td{border-bottom:1px solid var(--line); padding:.6rem .4rem; text-align:left}
+.bucket-table th{color:var(--muted); font-weight:600}
+.triggers{margin:.25rem 0 0 1rem}
+.method{color:var(--muted); margin-top:1rem; line-height:1.5}
+section{margin-bottom:1.5rem}
+footer{display:flex; align-items:center; justify-content:space-between; color:var(--muted); border-top:1px solid var(--line); padding-top:1rem}
