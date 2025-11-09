@@ -7,11 +7,6 @@
   "buckets": [
     {
       "name": "Military",
-      "bf": "2.5",
-      "note": "Operational failures; deep-strike reach"
-    },
-    {
-      "name": "Military",
       "bf": 1.22,
       "impact": "+8 pp",
       "note": "Ukraine holds adaptive advantage; Russian attrition continues."
@@ -64,12 +59,11 @@
       "bf_note": "Mil 1.30"
     },
     {
-      "date": "2025-11-08",
+      "date": "Nov 25",
       "category": "Military",
       "sub_category": "Command & Control Resilience",
       "text": "Syrskyi stated that Russian forces breached Ukrainian engineering barriers only in a few places near Pokrovsk, and that the situation remains under control. He confirmed contingency plans 'B' and 'C' for all scenarios.",
       "why_it_matters": "Demonstrates layered contingency planning and disciplined command structure under stress, reinforcing Ukraine’s defensive coherence and adaptability.",
-      "net_effect": "+2 pp",
       "bf_note": "↑ Bayesian Factor for control resilience and operational foresight."
     }
   ]
