@@ -1,6 +1,6 @@
 # VagusPredict
 
-**Evidence-weighted forecasting without spin.**  
+**Evidence-weighted forecasting.**  
 This repository powers [vaguspredict.com](https://vaguspredict.com) — a public, data-driven dashboard that applies Bayesian superforecasting to assess the probability of Vladimir Putin remaining in power through December 2026.
 
 ---
