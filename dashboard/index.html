@@ -74,7 +74,7 @@
         const ul = document.getElementById('triggers');
         d.triggers.forEach(t => {
           const li = document.createElement('li');
-          li.innerHTML = `<strong>${t.date}</strong> — ${t.text} <em>${t.bf_note or ''}</em>`;
+          li.innerHTML = `<strong>${t.date}</strong> — ${t.text} <em>${t.bf_note}</em>`;
           ul.appendChild(li);
         });
       })
