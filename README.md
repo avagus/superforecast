@@ -53,10 +53,10 @@ To post a new forecast cycle:
    ```json
    {
      "as_of": "2025-11-08",
-     "current_prob_pct": 92,
-     "base_rate_pct": 20,
-     "total_bf_product": "5.1",
-     "posterior_odds": "6.95",
+     "current_prob_pct": 90,
+     "base_rate_pct": 10,
+     "total_bf_product": "4.5",
+     "posterior_odds": "6.08",
      "buckets": [ ... ],
      "triggers": [ ... ]
    }
