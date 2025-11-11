@@ -74,7 +74,11 @@
         const ul = document.getElementById('triggers');
         d.triggers.forEach(t => {
           const li = document.createElement('li');
-          li.innerHTML = `<strong>${t.date}</strong> — ${t.text} <em>${t.bf_note}</em>`;
+            li.innerHTML = ` <strong>${t.date}</strong> — 
+                             <b>[${t.category}${t.sub_category ? ': ' + t.sub_category : ''}]</b> 
+                             ${t.text} 
+                             <em>${t.bf_note}</em>
+                             ${t.net_effect ? `<span class="delta">${t.net_effect}</span>` : ''}`;
           ul.appendChild(li);
         });
       })
