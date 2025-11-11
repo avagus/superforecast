@@ -29,3 +29,14 @@ h1{margin:0 0 .5rem 0; font-size:2rem}
 .tbl th,.tbl td{border-bottom:1px solid var(--line); padding:.6rem .4rem; text-align:left}
 .list{margin:.25rem 0 0 1rem}
 .foot{border-top:1px solid var(--line); padding:1rem 0; color:var(--muted)}
+.why {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+.delta {
+  margin-left: 6px;
+  font-weight: 700;
+}
+
