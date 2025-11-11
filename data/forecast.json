@@ -1,5 +1,5 @@
 {
-  "as_of": "2025-10-28",
+  "as_of": "2025-11-21",
   "current_prob_pct": 92,
   "base_rate_pct": 10,
   "total_bf_product": "4.5",
@@ -59,12 +59,12 @@
       "bf_note": "Mil 1.30"
     },
     {
-      "date": "Nov 25",
+      "date": "Nov 10",
       "category": "Military",
       "sub_category": "Command & Control Resilience",
       "text": "Syrskyi stated that Russian forces breached Ukrainian engineering barriers only in a few places near Pokrovsk, and that the situation remains under control. He confirmed contingency plans 'B' and 'C' for all scenarios.",
       "why_it_matters": "Demonstrates layered contingency planning and disciplined command structure under stress, reinforcing Ukraine’s defensive coherence and adaptability.",
-      "bf_note": "↑ Bayesian Factor for control resilience and operational foresight."
+      "bf_note": "+ Bayesian Factor for control resilience and operational foresight."
     }
   ]
 }
