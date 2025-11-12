@@ -85,6 +85,7 @@
             ${t.why_it_matters ? `<div class="why">Why it matters: ${t.why_it_matters}</div>` : ''}`;
           ul.appendChild(li);
         });
+        ul.scrollTo({ top: ul.scrollHeight, behavior: 'smooth' });
       })
       .catch(_ => {});
   </script>
