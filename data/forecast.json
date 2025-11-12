@@ -6,12 +6,6 @@
   "posterior_odds": "6.08",
   "buckets": [
     {
-      "name": "Military",
-      "bf": 1.22,
-      "impact": "+8 pp",
-      "note": "Ukraine holds adaptive advantage; Russian attrition continues."
-    },
-    {
       "name": "Economy/Energy",
       "bf": "2.2 (capped)",
       "note": "Inflation>20%; refinery hits; industrial stall"
@@ -66,5 +60,15 @@
       "why_it_matters": "Demonstrates layered contingency planning and disciplined command structure under stress, reinforcing Ukraine’s defensive coherence and adaptability.",
       "bf_note": "+ Bayesian Factor for control resilience and operational foresight."
     }
+    {
+      "date": "2025-11-11",
+      "category": "Symbolic Context",
+      "sub_category": "Morale & Civil Resilience",
+      "text": "Ukrainians: 'No electricity, no connection, no heat — but we have NO RUSSIANS!'",
+      "why_it_matters": "Reflects extraordinary civilian morale. Signals that Russian strategic terror campaigns—energy blackouts, infrastructure strikes—continue to fail in breaking Ukrainian will to resist. Psychological resilience remains a decisive asymmetric advantage.",
+      "net_effect": "+2 pp",
+      "bf_note": "↑ BF for Ukrainian civil resilience and strategic endurance"
+    }
+    
   ]
 }
