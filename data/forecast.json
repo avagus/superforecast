@@ -33,21 +33,6 @@
   ],
   "triggers": [
     {
-      "date": "Oct 27",
-      "text": "Storm Shadow destroys Bryansk Chemical Plant",
-      "bf_note": "Mil 1.35; Econ 1.25"
-    },
-    {
-      "date": "Oct 27",
-      "text": "Ocheretyne: 29-vehicle assault repelled",
-      "bf_note": "Mil 1.25"
-    },
-    {
-      "date": "Oct 25",
-      "text": "Black Sea Fleet degraded; naval denial",
-      "bf_note": "Mil 1.30"
-    },
-    {
       "date": "Nov 10",
       "category": "Military",
       "sub_category": "Command & Control Resilience",
@@ -71,6 +56,5 @@
       "why_it_matters": "Signals an asymmetric phase shift. Ukraine faces near-term supply and diplomatic pressure, but Western rearmament indicates long-term containment posture. Short-term instability, medium-term resilience.",
       "bf_note": "↓ BF to 0.85 for short-term support degradation; re-evaluate after 30 days or next NATO/Trump policy inflection."
     }
-  
   ]
 }
