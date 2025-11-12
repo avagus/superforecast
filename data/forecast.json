@@ -1,6 +1,6 @@
 {
   "as_of": "2025-11-21",
-  "current_prob_pct": 92,
+  "current_prob_pct": 89,
   "base_rate_pct": 10,
   "total_bf_product": "4.5",
   "posterior_odds": "6.08",
@@ -33,11 +33,6 @@
   ],
   "triggers": [
     {
-      "date": "Oct 28",
-      "text": "Rolling reservist deployment law",
-      "bf_note": "Mil 1.20; Dom 1.15"
-    },
-    {
       "date": "Oct 27",
       "text": "Storm Shadow destroys Bryansk Chemical Plant",
       "bf_note": "Mil 1.35; Econ 1.25"
@@ -67,7 +62,15 @@
       "text": "Ukrainians: 'No electricity, no connection, no heat — but we have NO RUSSIANS!'",
       "why_it_matters": "Reflects extraordinary civilian morale. Signals that Russian strategic terror campaigns—energy blackouts, infrastructure strikes—continue to fail in breaking Ukrainian will to resist. Psychological resilience remains a decisive asymmetric advantage.",
       "bf_note": "+ BF for Ukrainian civil resilience and strategic endurance"
+    }, 
+    {
+      "date": "2025-11-12",
+      "category": "External / Diplomatic",
+      "sub_category": "Peace Talks & Western Support",
+      "text": "Ukraine peace talks suspended as Russia regains limited battlefield initiative and Western aid falters; Europe rearming while U.S. pivots toward Indo-Pacific.",
+      "why_it_matters": "Signals an asymmetric phase shift. Ukraine faces near-term supply and diplomatic pressure, but Western rearmament indicates long-term containment posture. Short-term instability, medium-term resilience.",
+      "bf_note": "↓ BF to 0.85 for short-term support degradation; re-evaluate after 30 days or next NATO/Trump policy inflection."
     }
-    
+  
   ]
 }
